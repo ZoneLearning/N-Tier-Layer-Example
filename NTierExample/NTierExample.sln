@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTierExample.UI", "NTierExample.UI\NTierExample.UI.csproj", "{8F95B165-B45D-4D86-8079-049959C8D8B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTierExample.ORM", "NTierExample.ORM\NTierExample.ORM.csproj", "{D1580D9C-EA7B-4691-A242-F52C88D29849}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8F95B165-B45D-4D86-8079-049959C8D8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F95B165-B45D-4D86-8079-049959C8D8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F95B165-B45D-4D86-8079-049959C8D8B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1580D9C-EA7B-4691-A242-F52C88D29849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1580D9C-EA7B-4691-A242-F52C88D29849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1580D9C-EA7B-4691-A242-F52C88D29849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1580D9C-EA7B-4691-A242-F52C88D29849}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
