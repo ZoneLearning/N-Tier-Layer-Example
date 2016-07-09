@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Category.cs" />
     <Compile Include="Entity\Product.cs" />
+    <Compile Include="Facade\Categories.cs" />
     <Compile Include="Facade\Products.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
