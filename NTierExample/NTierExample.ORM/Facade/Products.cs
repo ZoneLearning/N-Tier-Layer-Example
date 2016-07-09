@@ -36,5 +36,17 @@ namespace NTierExample.ORM.Facade
 
             return Helper.MyExecuteNonQuery(command);
         }
+
+        public static bool Update(Product entity)
+        {
+            SqlCommand command = new SqlCommand("UpdateProduct", Helper.Connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", entity.ProductID);
+            command.Parameters.AddWithValue("@n", entity.ProductName);
+            command.Parameters.AddWithValue("@p", entity.UnitPrice);
+            command.Parameters.AddWithValue("@s", entity.UnitsInStock);
+
+            return Helper.MyExecuteNonQuery(command);
+        }
     }
 }
