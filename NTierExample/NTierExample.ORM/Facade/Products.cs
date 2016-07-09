@@ -29,22 +29,7 @@ namespace NTierExample.ORM.Facade
             command.Parameters.AddWithValue("@p", entity.UnitPrice);
             command.Parameters.AddWithValue("@s", entity.UnitsInStock);
 
-            try
-            {
-                if (command.Connection.State != ConnectionState.Open)
-                    command.Connection.Open();
-                return command.ExecuteNonQuery() > 0;//etkilenen satır sayısı 0'dan büyük ise true döner
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-            finally
-            {
-                if (command.Connection.State != ConnectionState.Closed)
-                    command.Connection.Close();
-            }
+            return Helper.MyExecuteNonQuery(command);
 
         }
     }
