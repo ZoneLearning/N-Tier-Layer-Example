@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NTierExample.ORM.Entity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace NTierExample.ORM.Facade
 {
     //Ürünler ile ilgili insert, update, delete, select işlemlerini (metodlarını) barındıran sınıf
-   public class Products
+    public class Products
     {
         public static DataTable getList()
         {
@@ -19,6 +20,32 @@ namespace NTierExample.ORM.Facade
             adp.Fill(dataTable);
 
             return dataTable;
+        }
+        public static bool Add(Product entity)
+        {
+            SqlCommand command = new SqlCommand("AddProduct", Helper.Connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@n", entity.ProductName);
+            command.Parameters.AddWithValue("@p", entity.UnitPrice);
+            command.Parameters.AddWithValue("@s", entity.UnitsInStock);
+
+            try
+            {
+                if (command.Connection.State != ConnectionState.Open)
+                    command.Connection.Open();
+                return command.ExecuteNonQuery() > 0;//etkilenen satır sayısı 0'dan büyük ise true döner
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            finally
+            {
+                if (command.Connection.State != ConnectionState.Closed)
+                    command.Connection.Close();
+            }
+
         }
     }
 }
