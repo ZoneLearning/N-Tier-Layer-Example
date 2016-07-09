@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,12 @@ namespace NTierExample.ORM.Facade
     {
         public static DataTable getList()
         {
-            return null;
+            SqlDataAdapter adp = new SqlDataAdapter("ListProduct", Helper.Connection);
+            adp.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dataTable = new DataTable();
+            adp.Fill(dataTable);
+
+            return dataTable;
         }
     }
 }

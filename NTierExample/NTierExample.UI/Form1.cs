@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NTierExample.ORM.Facade;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,9 @@ namespace NTierExample.UI
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Products.getList();       }
     }
 }
