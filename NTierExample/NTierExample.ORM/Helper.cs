@@ -43,5 +43,14 @@ namespace NTierExample.ORM
             }
         }
 
+        public static DataTable getListAll(string procedureName)
+        {
+            SqlDataAdapter adp = new SqlDataAdapter(procedureName, Helper.Connection);
+            adp.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dataTable = new DataTable();
+            adp.Fill(dataTable);
+
+            return dataTable;
+        }
     }
 }

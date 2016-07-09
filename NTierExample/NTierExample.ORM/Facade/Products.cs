@@ -14,12 +14,7 @@ namespace NTierExample.ORM.Facade
     {
         public static DataTable getList()
         {
-            SqlDataAdapter adp = new SqlDataAdapter("ListProduct", Helper.Connection);
-            adp.SelectCommand.CommandType = CommandType.StoredProcedure;
-            DataTable dataTable = new DataTable();
-            adp.Fill(dataTable);
-
-            return dataTable;
+            return Helper.getListAll("ListProduct");
         }
         public static bool Add(Product entity)
         {
