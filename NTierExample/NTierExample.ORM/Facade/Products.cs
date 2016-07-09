@@ -32,5 +32,14 @@ namespace NTierExample.ORM.Facade
             return Helper.MyExecuteNonQuery(command);
 
         }
+
+        public static bool Delete(Product entity)
+        {
+            SqlCommand command = new SqlCommand("DeleteProduct", Helper.Connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", entity.ProductID);
+
+            return Helper.MyExecuteNonQuery(command);
+        }
     }
 }

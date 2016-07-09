@@ -21,7 +21,8 @@ namespace NTierExample.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Products.getList();       }
+            dataGridView1.DataSource = Products.getList();
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -33,6 +34,18 @@ namespace NTierExample.UI
                 MessageBox.Show("Ürün Eklenemedi");
 
             //ekledikten sonra listelemeyi yeniden yapıyoruz.
+            dataGridView1.DataSource = Products.getList();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0) return;
+
+            Product deleted = new Product();
+            deleted.ProductID = (int)dataGridView1.CurrentRow.Cells["ProductID"].Value;
+            if (!Products.Delete(deleted))
+                MessageBox.Show("Ürün Silenemedi");
+
             dataGridView1.DataSource = Products.getList();
         }
     }
