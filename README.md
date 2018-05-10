@@ -6,7 +6,7 @@ MS SQL Server üzerinde NorthWind veri tabanı kullanılmıştır. [Şuradan](ht
 
 Proje; Veri tabanı, UI (WinForm) ve ORM kısmı olarak 3'e ayrılmıştır. ORM ise kendi içinde Facade ve Entity olarak ikiye ayrılmıştır.
 
-Yazarken aldığım notlar ve  kod ekran görüntüleri için [şurayı](https://medium.com/@learningzone/ntier-katmanl%C4%B1-mimari-7c8b2c649595#.vyg7q3qfw) inceleyebilirsiniz.
+Yazarken aldığım notlar ve  kod ekran görüntüleri için [şurayı](https://medium.com/@learningzone/ntier-katmanl%C4%B1-mimari-7f515b7e600f) inceleyebilirsiniz.
 
 Yapılan işlemler
  * Select ( Listeleme )
